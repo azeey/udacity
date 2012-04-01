@@ -148,7 +148,7 @@ def run(param1, param2, param3):
     coords = []
     cte_last = myrobot.y
     cte_sum = 0
-    for i in range(N):
+    for i in range(5*N):
         cte = myrobot.y
         dcte = cte - cte_last
         cte_sum += cte
@@ -160,14 +160,18 @@ def run(param1, param2, param3):
     return coords
 
 # Call your function with parameters of (0.2, 3.0, and 0.004)
-c = run(0.2, 3.0, 0.004)
+#c = run(0.2, 3.0, 0.004)
+#c = run(0.2, 3.0, 0.004)
+#c = run(0.2, 0.0, 0.00)
+c = run(0.0, 3.0, 0.004)
 #c = run(0.2, 3.0, 0.01)
 #c = run(0.2, 3.0, 0.0055)
 
 
 import pylab as plt
 x,y = zip(*c)
-plt.scatter(x,y)
-plt.axhline(y=0)
+#plt.scatter(x,y)
+plt.plot(x,y,'.-')
+plt.axhline(y=0,c='r')
 plt.show()
 
